@@ -30,9 +30,13 @@ window.addEventListener('load', () => {
                     } = data.currently;
 
                     // Set DOM Elements from the API
-                    temperatureDegree.textContent = temperature;
+                    temperatureDegree.textContent = Math.floor(temperature);
                     temperatureDescription.textContent = summary;
                     locationTimezone.textContent = data.timezone;
+
+                    // Formula for Celsius from Farenheit
+                    let celsius = (temperature - 32) * (5 / 9);
+
                     // Set Icon
                     setIcons(icon, document.querySelector(".icon"));
 
@@ -40,8 +44,10 @@ window.addEventListener('load', () => {
                     temperatureSection.addEventListener('click', () => {
                         if (temperatureSpan.textContent === "Farenheit") {
                             temperatureSpan.textContent = "Celsius";
+                            temperatureDegree.textContent = Math.floor(celsius);
                         } else {
                             temperatureSpan.textContent = "Farenheit";
+                            temperatureDegree.textContent = Math.floor(temperature);
                         }
                     })
                 });
