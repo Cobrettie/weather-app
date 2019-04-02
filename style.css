@@ -26,6 +26,7 @@ body {
 
 .temperature {
     flex-direction: column;
+    cursor: pointer;
 }
 
 .degree-section {
