@@ -52,3 +52,12 @@ body {
 Begin Media Queries
 ---------
  */
+
+@media(max-width: 500px) {
+    .location {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+}
